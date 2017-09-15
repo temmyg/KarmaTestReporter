@@ -5,7 +5,7 @@ module.exports = function (config) {
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
 
-    plugins: ['karma-webpack',  'karma-tap', 'karma-chrome-launcher', 'karma-coverage', 'karma-istanbuljs-reporter'], //['karma-webpack', 'karma-coverage', 'karma-tap', 'karma-chrome-launcher'],
+    plugins: ['karma-webpack',  'karma-tap', 'karma-chrome-launcher', 'karma-jsdom-launcher', 'karma-coverage', 'karma-istanbuljs-reporter'], //['karma-webpack', 'karma-coverage', 'karma-tap', 'karma-chrome-launcher'],
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
@@ -62,7 +62,13 @@ module.exports = function (config) {
         { type: 'html', subdir: 'report-html' }
 
       ],
-      checkCoverage: true
+      //checkCoverage: true
+      checkCoverage: {
+        lines: 50,
+        function: 30,
+        statements: 20,
+        branches: 0
+      }
     },
     coverageReporter: {
       reporters: [
@@ -100,7 +106,7 @@ module.exports = function (config) {
     // start these browsers
     // available browser launchers:
     // https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome'], //['jsdom'],
+    browsers: ['jsdom'],   //['Chrome'], //['jsdom'],
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits

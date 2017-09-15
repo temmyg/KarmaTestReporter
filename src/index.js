@@ -6,6 +6,6 @@ module.exports = function operation(a, b) {
 }
 
 function useTool(tool){
-	let tool = '1.' + tool
-	return tool;
+	let tools = [tool];
+	return tools;
 }
