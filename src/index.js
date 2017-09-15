@@ -7,5 +7,5 @@ module.exports = function operation(a, b) {
 
 function useTool(tool){
 	let tools = [tool];
-	return tools;
+	return  tools;
 }
